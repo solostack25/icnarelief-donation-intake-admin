@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "Today" },
   { href: "/weekly", label: "Weekly" },
   { href: "/monthly", label: "Monthly" },
+  { href: "/users", label: "Users" },
 ];
 
 export default function Nav() {

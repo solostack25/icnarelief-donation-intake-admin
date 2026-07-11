@@ -27,6 +27,26 @@ on purpose. To create your first admin login:
 
 Add more admins the same way.
 
+## Users page — creating admin logins from the dashboard
+
+`/users` lets a signed-in admin create new logins and see who already has
+access, instead of adding people in the Supabase dashboard by hand.
+
+This needs the **service role key** (not the anon/publishable key) since
+creating users is an elevated action. Get it from:
+
+Supabase dashboard → Settings → API → reveal the `service_role` secret
+
+Add it as `SUPABASE_SERVICE_ROLE_KEY` in `.env.local` and in Vercel.
+**Server-only** — it's read inside API routes (`lib/supabaseAdmin.ts`) and
+never sent to the browser. Don't prefix it with `NEXT_PUBLIC_` or it'll leak
+into client bundles.
+
+Heads up: this app doesn't have roles — anyone who can sign in has full
+access, including creating more logins. Fine for a small trusted team; if
+you ever want a "read-only" tier, that's a bigger change (a `roles` table +
+checks on each page), just flag it.
+
 ## Salesforce push — flow is built, just needs your credentials
 
 Click "Push to Salesforce" on any row and it calls `/api/salesforce/push`,
