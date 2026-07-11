@@ -3,6 +3,7 @@ import { CATEGORIES } from "./categories";
 
 export type DashboardSession = {
   id: string;
+  invoice_id: string | null;
   completed_at: string | null;
   office: string | null;
   program: string | null;
@@ -28,7 +29,7 @@ export async function fetchCompletedSessions(
   const { data: sessions } = await supabase
     .from("sessions")
     .select(
-      "id, completed_at, office, program, donor_kind, donor_org_name, synced_to_salesforce, sync_error"
+      "id, invoice_id, completed_at, office, program, donor_kind, donor_org_name, synced_to_salesforce, sync_error"
     )
     .eq("status", "completed")
     .gte("completed_at", start.toISOString())

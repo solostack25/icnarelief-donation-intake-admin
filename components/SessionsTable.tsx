@@ -44,6 +44,7 @@ export default function SessionsTable({
       <table className="w-full text-sm">
         <thead className="bg-gray-50 text-gray-500 text-left">
           <tr>
+            <th className="p-3">Invoice #</th>
             <th className="p-3">Time</th>
             <th className="p-3">Donor</th>
             <th className="p-3">Office / Program</th>
@@ -55,6 +56,9 @@ export default function SessionsTable({
         <tbody className="divide-y divide-gray-100">
           {sessions.map((s) => (
             <tr key={s.id}>
+              <td className="p-3 whitespace-nowrap font-mono text-xs text-brand-dark font-semibold">
+                {s.invoice_id ?? "—"}
+              </td>
               <td className="p-3 whitespace-nowrap">
                 {s.completed_at ? new Date(s.completed_at).toLocaleString() : "—"}
               </td>
