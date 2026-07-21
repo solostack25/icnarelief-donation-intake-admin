@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import {
   fetchCompletedSessions,
-  sumCategoryTotals,
+  sumProgramTotals,
   type DashboardSession,
 } from "@/lib/fetchSessions";
-import CategoryTotals from "@/components/CategoryTotals";
+import ProgramTotals from "@/components/ProgramTotals";
 import SessionsTable from "@/components/SessionsTable";
 
 export default function TodayPage() {
@@ -34,8 +34,9 @@ export default function TodayPage() {
     );
   }
 
-  const totals = sumCategoryTotals(sessions);
-  const totalItems = Object.values(totals).reduce((a, b) => a + b, 0);
+  const totals = sumProgramTotals(sessions);
+  const totalItems = sessions.reduce((a, s) => a + s.totalItems, 0);
+  const totalValue = sessions.reduce((a, s) => a + s.totalValue, 0);
 
   return (
     <main className="p-6">
@@ -45,7 +46,8 @@ export default function TodayPage() {
           <p className="text-gray-500 text-sm">
             {new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })}
             {" · "}
-            {sessions.length} donation{sessions.length === 1 ? "" : "s"} · {totalItems} items
+            {sessions.length} donation{sessions.length === 1 ? "" : "s"} · {totalItems} items · $
+            {totalValue.toFixed(2)}
           </p>
         </div>
       </div>
@@ -54,7 +56,7 @@ export default function TodayPage() {
         <p className="text-gray-400 text-sm">Loading...</p>
       ) : (
         <>
-          <CategoryTotals totals={totals} />
+          <ProgramTotals totals={totals} />
           <SessionsTable sessions={sessions} onSynced={markSynced} />
         </>
       )}

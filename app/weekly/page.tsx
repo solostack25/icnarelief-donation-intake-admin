@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import {
   fetchCompletedSessions,
-  sumCategoryTotals,
+  sumProgramTotals,
   type DashboardSession,
 } from "@/lib/fetchSessions";
-import CategoryTotals from "@/components/CategoryTotals";
+import ProgramTotals from "@/components/ProgramTotals";
 import SessionsTable from "@/components/SessionsTable";
 
 type DayBucket = { label: string; date: Date; sessions: DashboardSession[] };
@@ -36,8 +36,9 @@ export default function WeeklyPage() {
     );
   }
 
-  const totals = sumCategoryTotals(sessions);
-  const totalItems = Object.values(totals).reduce((a, b) => a + b, 0);
+  const totals = sumProgramTotals(sessions);
+  const totalItems = sessions.reduce((a, s) => a + s.totalItems, 0);
+  const totalValue = sessions.reduce((a, s) => a + s.totalValue, 0);
 
   // Bucket into the last 7 calendar days for the mini bar chart
   const days: DayBucket[] = Array.from({ length: 7 }).map((_, i) => {
@@ -61,7 +62,7 @@ export default function WeeklyPage() {
       <div className="mb-4">
         <h1 className="text-2xl font-bold text-brand-dark">This Week</h1>
         <p className="text-gray-500 text-sm">
-          Last 7 days · {sessions.length} donations · {totalItems} items
+          Last 7 days · {sessions.length} donations · {totalItems} items · ${totalValue.toFixed(2)}
         </p>
       </div>
 
@@ -89,7 +90,7 @@ export default function WeeklyPage() {
             })}
           </div>
 
-          <CategoryTotals totals={totals} />
+          <ProgramTotals totals={totals} />
           <SessionsTable sessions={sessions} onSynced={markSynced} />
         </>
       )}

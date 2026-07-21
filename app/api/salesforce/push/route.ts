@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     await Promise.all([
       supabase.from("sessions").select("*").eq("id", sessionId).single(),
       supabase.from("donors").select("*").eq("session_id", sessionId).maybeSingle(),
-      supabase.from("donations").select("category, qty").eq("session_id", sessionId),
+      supabase.from("donations").select("item_name, condition, qty, unit_price, is_manual_price, program").eq("session_id", sessionId),
     ]);
 
   if (sessionError || !session) {

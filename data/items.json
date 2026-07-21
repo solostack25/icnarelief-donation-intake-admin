@@ -1,0 +1,1910 @@
+[
+  {
+    "code": "SCHOOL-BAG",
+    "name": "SCHOOL BAG",
+    "program": "Back2school",
+    "programCode": "B2S",
+    "newPrice": 8,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "SCHOOL-SUPPLIES",
+    "name": "SCHOOL SUPPLIES",
+    "program": "Back2school",
+    "programCode": "B2S",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BAKERY",
+    "name": "BAKERY",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "DRY-GROCERY-LBS",
+    "name": "DRY GROCERY / LBS",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": 2.75,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "EGGS",
+    "name": "EGGS",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "FISH",
+    "name": "FISH",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "MILK",
+    "name": "MILK",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "NON-PERISHABLE",
+    "name": "NON PERISHABLE",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "PERISHABLES",
+    "name": "PERISHABLES",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "POULTRY",
+    "name": "POULTRY",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "PRODUCE",
+    "name": "PRODUCE",
+    "program": "Hunger Prevention",
+    "programCode": "HPS",
+    "newPrice": null,
+    "usedPrice": null,
+    "manualPrice": true
+  },
+  {
+    "code": "ADULT-DIAPERS",
+    "name": "ADULT DIAPERS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "ADULT-TOILET-CHAIR",
+    "name": "ADULT TOILET CHAIR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "ADULT-WALKER",
+    "name": "ADULT WALKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "AIR-CONDITIONER",
+    "name": "AIR CONDITIONER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 93,
+    "usedPrice": 14,
+    "manualPrice": false
+  },
+  {
+    "code": "AIR-FRYER",
+    "name": "AIR FRYER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "AQUARIUM",
+    "name": "AQUARIUM",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "AUDIO-CASSETE-PLAYER",
+    "name": "AUDIO CASSETE PLAYER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "AUDIO-CASSETETE-TAPES",
+    "name": "AUDIO CASSETETE TAPES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 1,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-BASSINET",
+    "name": "BABY BASSINET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-BED-WITH-MATTRESS",
+    "name": "BABY BED WITH MATTRESS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-BOTTLE",
+    "name": "BABY BOTTLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 4,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-DIAPER",
+    "name": "BABY DIAPER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-ROCKER",
+    "name": "BABY ROCKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-STROLLER",
+    "name": "BABY STROLLER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-SWING",
+    "name": "BABY SWING",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 70,
+    "usedPrice": 25,
+    "manualPrice": false
+  },
+  {
+    "code": "BABY-WALKER",
+    "name": "BABY WALKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 20,
+    "manualPrice": false
+  },
+  {
+    "code": "BAKEWARE",
+    "name": "BAKEWARE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BATH-MATS",
+    "name": "BATH MATS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BED",
+    "name": "BED",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 176,
+    "usedPrice": 27,
+    "manualPrice": false
+  },
+  {
+    "code": "BED-FRAME",
+    "name": "BED FRAME",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "BED-SHEET",
+    "name": "BED SHEET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BEDROOM-SET-COMPLETE",
+    "name": "BEDROOM SET -COMPLETE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 1037,
+    "usedPrice": 156,
+    "manualPrice": false
+  },
+  {
+    "code": "BEDSPREAD-QUILT",
+    "name": "BEDSPREAD / QUILT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "BICYCLE",
+    "name": "BICYCLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 83,
+    "usedPrice": 13,
+    "manualPrice": false
+  },
+  {
+    "code": "BIG-TOY-CAR-TRUCK",
+    "name": "BIG TOY CAR / TRUCK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "BLANKET",
+    "name": "BLANKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "BLENDER",
+    "name": "BLENDER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "BOARD-GAME",
+    "name": "BOARD GAME",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BOOK",
+    "name": "BOOK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "BOOK-CASE",
+    "name": "BOOK CASE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 90,
+    "usedPrice": 14,
+    "manualPrice": false
+  },
+  {
+    "code": "BOOSTER-SEAT",
+    "name": "BOOSTER SEAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "BOWL",
+    "name": "BOWL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "BRANDED-SHOES",
+    "name": "BRANDED SHOES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "BREAD-MAKER",
+    "name": "BREAD MAKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "BREAST-PUMP",
+    "name": "BREAST PUMP",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 40,
+    "manualPrice": false
+  },
+  {
+    "code": "BRIDAL-DRESSES",
+    "name": "BRIDAL DRESSES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 75,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "BUNK-BED",
+    "name": "BUNK BED",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 120,
+    "usedPrice": 18,
+    "manualPrice": false
+  },
+  {
+    "code": "CAMERA",
+    "name": "CAMERA",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "CANDLE",
+    "name": "CANDLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CANISTER",
+    "name": "CANISTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CAR-FRESHNERS",
+    "name": "CAR FRESHNERS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 7,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "CAR-MATS",
+    "name": "CAR MATS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CAR-SEAT",
+    "name": "CAR SEAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "CARPET",
+    "name": "CARPET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 9,
+    "manualPrice": false
+  },
+  {
+    "code": "CARPET-CLEANING-MACHINE",
+    "name": "CARPET CLEANING MACHINE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 90,
+    "usedPrice": 14,
+    "manualPrice": false
+  },
+  {
+    "code": "CD",
+    "name": "CD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CD-PLAYER",
+    "name": "CD PLAYER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "CELL-PHONE",
+    "name": "CELL PHONE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "CHAIR-UPHOLSTERED",
+    "name": "CHAIR -UPHOLSTERED",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 104,
+    "usedPrice": 16,
+    "manualPrice": false
+  },
+  {
+    "code": "CHAIR-SOFA-COVER",
+    "name": "CHAIR / SOFA COVER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 36,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "CHANDILIER",
+    "name": "CHANDILIER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "CHANGING-TABLE",
+    "name": "CHANGING TABLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "CHEST",
+    "name": "CHEST",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 99,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "CLEANING-SUPPLY",
+    "name": "CLEANING SUPPLY",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CLOTHING",
+    "name": "CLOTHING",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "CLOTHING-DRYER",
+    "name": "CLOTHING DRYER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 400,
+    "usedPrice": 93,
+    "manualPrice": false
+  },
+  {
+    "code": "COFEE-GRINDER",
+    "name": "COFEE GRINDER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "COFFE-MAKER",
+    "name": "COFFE MAKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "COFFEE-TABLE",
+    "name": "COFFEE TABLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 67,
+    "usedPrice": 11,
+    "manualPrice": false
+  },
+  {
+    "code": "COFFEEMAKER",
+    "name": "COFFEEMAKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 16,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "COMFORTER",
+    "name": "COMFORTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "COMPUTER-CHAIR",
+    "name": "COMPUTER CHAIR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 70,
+    "usedPrice": 11,
+    "manualPrice": false
+  },
+  {
+    "code": "COMPUTER-TABLE",
+    "name": "COMPUTER TABLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 75,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "COOKING-SPOONES",
+    "name": "COOKING SPOONES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "COUCH",
+    "name": "COUCH",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "CPU",
+    "name": "CPU",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 415,
+    "usedPrice": 63,
+    "manualPrice": false
+  },
+  {
+    "code": "CRIB-W-MATTRESS",
+    "name": "CRIB -W / MATTRESS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 104,
+    "usedPrice": 16,
+    "manualPrice": false
+  },
+  {
+    "code": "CRIB-MATRESS",
+    "name": "CRIB MATRESS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "CROCK-POT",
+    "name": "CROCK POT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "CROCKERY-SET",
+    "name": "CROCKERY SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "CUPS",
+    "name": "CUPS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "CURTAIN-ROD",
+    "name": "CURTAIN ROD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "CURTAINS",
+    "name": "CURTAINS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 12,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "CUSHIONS",
+    "name": "CUSHIONS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "CUTLERY-SET",
+    "name": "CUTLERY SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "CUTTING-BOARD",
+    "name": "CUTTING BOARD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "DESK",
+    "name": "DESK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 145,
+    "usedPrice": 22,
+    "manualPrice": false
+  },
+  {
+    "code": "DIAPER-BAG",
+    "name": "DIAPER BAG",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "DINING-CHAIRS",
+    "name": "DINING CHAIRS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "DINING-TABLE-WITH-4-CHAIRS",
+    "name": "DINING TABLE WITH 4 CHAIRS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 250,
+    "usedPrice": 38,
+    "manualPrice": false
+  },
+  {
+    "code": "DINING-TABLE-WITHOUT-CHAIRS",
+    "name": "DINING TABLE WITHOUT CHAIRS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 200,
+    "usedPrice": 80,
+    "manualPrice": false
+  },
+  {
+    "code": "DINNER-SET",
+    "name": "DINNER SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 20,
+    "manualPrice": false
+  },
+  {
+    "code": "DISH-DRAINER",
+    "name": "DISH DRAINER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "DOLL-HOUSE",
+    "name": "DOLL HOUSE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "DRESSER",
+    "name": "DRESSER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-CHOPPER",
+    "name": "ELECTRIC CHOPPER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-FRYER",
+    "name": "ELECTRIC FRYER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-GRIDDLE",
+    "name": "ELECTRIC GRIDDLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-KETTLE",
+    "name": "ELECTRIC KETTLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-STOVE",
+    "name": "ELECTRIC STOVE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 156,
+    "usedPrice": 24,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRIC-WATER-DISPENSOR",
+    "name": "ELECTRIC WATER DISPENSOR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "ELECTRICAL-SCOOTER",
+    "name": "ELECTRICAL SCOOTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "ENTERTAINMENT-CENTER",
+    "name": "ENTERTAINMENT CENTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 225,
+    "usedPrice": 34,
+    "manualPrice": false
+  },
+  {
+    "code": "EXERCISE-EQUIPMENT",
+    "name": "EXERCISE EQUIPMENT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 45,
+    "usedPrice": 7,
+    "manualPrice": false
+  },
+  {
+    "code": "FAN",
+    "name": "FAN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "FANCY-DINNER-SET-80-PCS",
+    "name": "FANCY DINNER SET 80 PCS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "FILE-CABINET",
+    "name": "FILE CABINET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "FLOOR-LAMP",
+    "name": "FLOOR LAMP",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 52,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "FLOOR-MAT",
+    "name": "FLOOR MAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "FOLDING-CRIB",
+    "name": "FOLDING CRIB",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "FREEZER",
+    "name": "FREEZER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "FRYING-PAN",
+    "name": "FRYING PAN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 7,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "GAMING-CONSOLE",
+    "name": "GAMING CONSOLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "GAS-STOVE",
+    "name": "GAS STOVE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 130,
+    "usedPrice": 20,
+    "manualPrice": false
+  },
+  {
+    "code": "GIFT-ITEMS",
+    "name": "GIFT ITEMS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "GLASSES-SET",
+    "name": "GLASSES SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "GOODY-BAG",
+    "name": "GOODY BAG",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 4,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "GRILL-ELECTRIC",
+    "name": "GRILL ELECTRIC",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "HAND-BAGS",
+    "name": "HAND BAGS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "HAND-SANITIZER",
+    "name": "HAND SANITIZER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 7,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "HEADBOARD",
+    "name": "HEADBOARD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 70,
+    "usedPrice": 11,
+    "manualPrice": false
+  },
+  {
+    "code": "HEALTH-AND-BEAUTY-AID-ITEMS",
+    "name": "HEALTH AND BEAUTY AID ITEMS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "HEATER",
+    "name": "HEATER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 23,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "HEATING-PAD",
+    "name": "HEATING PAD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "HIGH-CHAIR",
+    "name": "HIGH CHAIR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 52,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "HOME-DECOR",
+    "name": "HOME DECOR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "HUMIDIFIER",
+    "name": "HUMIDIFIER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "INTERNET-ROUTER",
+    "name": "INTERNET ROUTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "IRON",
+    "name": "IRON",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "IRON-STAND",
+    "name": "IRON STAND",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "JEWELRY",
+    "name": "JEWELRY",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "JEWELRY-BOX",
+    "name": "JEWELRY BOX",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "JUICE-MACHINE-ELECTRIC",
+    "name": "JUICE MACHINE ELECTRIC",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "KEYBOARD",
+    "name": "KEYBOARD",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "KITCHEN-ELECTRONIC",
+    "name": "KITCHEN ELECTRONIC",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "KITCHEN-GADETS",
+    "name": "KITCHEN GADETS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "KITCHEN-NAPKIN-ROLL",
+    "name": "KITCHEN NAPKIN ROLL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "KNIFE",
+    "name": "KNIFE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "LAMP",
+    "name": "LAMP",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 78,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "LAPTOP",
+    "name": "LAPTOP",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 250,
+    "usedPrice": 38,
+    "manualPrice": false
+  },
+  {
+    "code": "LAUNDRY-BASKET",
+    "name": "LAUNDRY BASKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "LAUNDRY-DETERGENT",
+    "name": "LAUNDRY DETERGENT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "LAWN-MOVER",
+    "name": "LAWN MOVER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "LEATHER-JACKET",
+    "name": "LEATHER JACKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "LUV-SEAT",
+    "name": "LUV SEAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "MAKE-UP-BRANDED",
+    "name": "MAKE UP / BRANDED",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "MATTRESS",
+    "name": "MATTRESS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 150,
+    "usedPrice": 23,
+    "manualPrice": false
+  },
+  {
+    "code": "MEAT",
+    "name": "MEAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 8,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "MICROWAVE",
+    "name": "MICROWAVE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 50,
+    "manualPrice": false
+  },
+  {
+    "code": "MIRROR",
+    "name": "MIRROR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "MONITOR",
+    "name": "MONITOR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 51,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "NIGHT-STAND",
+    "name": "NIGHT STAND",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 60,
+    "usedPrice": 9,
+    "manualPrice": false
+  },
+  {
+    "code": "NOTEBOOKS",
+    "name": "NOTEBOOKS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "PAPER-SHREDDER",
+    "name": "PAPER SHREDDER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "PICTURE-PAINTING",
+    "name": "PICTURE / PAINTING",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 207,
+    "usedPrice": 32,
+    "manualPrice": false
+  },
+  {
+    "code": "PICTURE-FRAME",
+    "name": "PICTURE FRAME",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 8,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "PILLOW",
+    "name": "PILLOW",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 4,
+    "manualPrice": false
+  },
+  {
+    "code": "PLASTIC-BOWL",
+    "name": "PLASTIC BOWL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "PLATE",
+    "name": "PLATE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 3,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "PLAYPEN",
+    "name": "PLAYPEN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 31,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "POOL",
+    "name": "POOL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "POT",
+    "name": "POT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "POTS-PAN-SET",
+    "name": "POTS & PAN SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "PRAYER-RUG",
+    "name": "PRAYER RUG",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "PREPARED-MEAL",
+    "name": "PREPARED MEAL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "PRESSURE-COOKER",
+    "name": "PRESSURE COOKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "PRINTER-OR-COPIER",
+    "name": "PRINTER &/OR COPIER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 200,
+    "usedPrice": 40,
+    "manualPrice": false
+  },
+  {
+    "code": "RECLINER-CHAIR",
+    "name": "RECLINER CHAIR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "REFRIGERATOR",
+    "name": "REFRIGERATOR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 65,
+    "usedPrice": 10,
+    "manualPrice": false
+  },
+  {
+    "code": "RICE-COOKER",
+    "name": "RICE COOKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 35,
+    "usedPrice": 16,
+    "manualPrice": false
+  },
+  {
+    "code": "ROLLER-BLADES",
+    "name": "ROLLER BLADES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 16,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "RUMBA-VACCUME-CLEANER",
+    "name": "RUMBA VACCUME CLEANER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "SANDWICH-MAKER-ELECTRIC",
+    "name": "SANDWICH MAKER ELECTRIC",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "SCOOTER",
+    "name": "SCOOTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "SECTIONAL-SOFA-SET",
+    "name": "SECTIONAL SOFA SET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 350,
+    "usedPrice": 53,
+    "manualPrice": false
+  },
+  {
+    "code": "SEWING-MACHINE",
+    "name": "SEWING MACHINE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 88,
+    "usedPrice": 40,
+    "manualPrice": false
+  },
+  {
+    "code": "SHOE-RACK",
+    "name": "SHOE RACK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "SHOES",
+    "name": "SHOES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 35,
+    "usedPrice": 14,
+    "manualPrice": false
+  },
+  {
+    "code": "SHOWER-SEAT-ADULT",
+    "name": "SHOWER SEAT ADULT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 50,
+    "usedPrice": 20,
+    "manualPrice": false
+  },
+  {
+    "code": "SIDE-LAMPS",
+    "name": "SIDE LAMPS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "SLEEPER-SOFA-WITH-MATTRESS",
+    "name": "SLEEPER SOFA -WITH MATTRESS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 311,
+    "usedPrice": 47,
+    "manualPrice": false
+  },
+  {
+    "code": "SOFA",
+    "name": "SOFA",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 207,
+    "usedPrice": 32,
+    "manualPrice": false
+  },
+  {
+    "code": "SPEAKER",
+    "name": "SPEAKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "SPOONS-AND-FORK",
+    "name": "SPOONS AND FORK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 1,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "STROAGE-JARS-KITCHEN",
+    "name": "STROAGE JARS KITCHEN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 8,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "SUITECASE",
+    "name": "SUITECASE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 16,
+    "manualPrice": false
+  },
+  {
+    "code": "TABLE-MATS",
+    "name": "TABLE MATS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "TABLET",
+    "name": "TABLET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 150,
+    "usedPrice": 30,
+    "manualPrice": false
+  },
+  {
+    "code": "TENNIS-RACKET",
+    "name": "TENNIS RACKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "THERMOS",
+    "name": "THERMOS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 25,
+    "usedPrice": 8,
+    "manualPrice": false
+  },
+  {
+    "code": "TOASTER",
+    "name": "TOASTER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "TOASTER-OVEN",
+    "name": "TOASTER OVEN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 20,
+    "manualPrice": false
+  },
+  {
+    "code": "TOWEL",
+    "name": "TOWEL",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 8,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "TOY-CHEST",
+    "name": "TOY CHEST",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 35,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "TOYS",
+    "name": "TOYS",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "TRASH-CAN",
+    "name": "TRASH CAN",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "TUPPERWARE",
+    "name": "TUPPERWARE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 2,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "TV",
+    "name": "TV",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 233,
+    "usedPrice": 35,
+    "manualPrice": false
+  },
+  {
+    "code": "TV-BRACKET",
+    "name": "TV BRACKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "TV-STAND",
+    "name": "TV STAND",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 80,
+    "usedPrice": 12,
+    "manualPrice": false
+  },
+  {
+    "code": "UMBRELLA",
+    "name": "UMBRELLA",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 6,
+    "usedPrice": 1,
+    "manualPrice": false
+  },
+  {
+    "code": "VACUME-CLEANER",
+    "name": "VACUME CLEANER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 100,
+    "usedPrice": 15,
+    "manualPrice": false
+  },
+  {
+    "code": "VCR",
+    "name": "VCR",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 16,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "WAFFLE-MAKER",
+    "name": "WAFFLE MAKER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "WALL-CLOCK",
+    "name": "WALL CLOCK",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 20,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "WASHER",
+    "name": "WASHER",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 500,
+    "usedPrice": 200,
+    "manualPrice": false
+  },
+  {
+    "code": "WATCH",
+    "name": "WATCH",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 40,
+    "usedPrice": 6,
+    "manualPrice": false
+  },
+  {
+    "code": "WATER-BOTTLE",
+    "name": "WATER BOTTLE",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 10,
+    "usedPrice": 2,
+    "manualPrice": false
+  },
+  {
+    "code": "WATER-BOTTLES",
+    "name": "WATER BOTTLES",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 15,
+    "usedPrice": 3,
+    "manualPrice": false
+  },
+  {
+    "code": "WINTER-JACKET",
+    "name": "WINTER JACKET",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 30,
+    "usedPrice": 5,
+    "manualPrice": false
+  },
+  {
+    "code": "YOGA-MAT",
+    "name": "YOGA MAT",
+    "program": "Refugee Services & Community Empowerment",
+    "programCode": "RCS",
+    "newPrice": 5,
+    "usedPrice": 1,
+    "manualPrice": false
+  }
+]

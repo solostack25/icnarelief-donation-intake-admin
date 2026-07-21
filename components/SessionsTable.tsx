@@ -47,8 +47,10 @@ export default function SessionsTable({
             <th className="p-3">Invoice #</th>
             <th className="p-3">Time</th>
             <th className="p-3">Donor</th>
-            <th className="p-3">Office / Program</th>
+            <th className="p-3">Office / Programs</th>
             <th className="p-3">Items</th>
+            <th className="p-3">Value</th>
+            <th className="p-3">Invoices</th>
             <th className="p-3">Salesforce</th>
             <th className="p-3"></th>
           </tr>
@@ -66,9 +68,34 @@ export default function SessionsTable({
                 {s.donor?.name || s.donor_org_name || <span className="text-gray-400">Anonymous</span>}
               </td>
               <td className="p-3 text-gray-500">
-                {s.office ?? "—"} {s.program ? `· ${s.program}` : ""}
+                {s.office ?? "—"} {s.programs.length ? `· ${s.programs.join(", ")}` : ""}
               </td>
               <td className="p-3 font-semibold">{s.totalItems}</td>
+              <td className="p-3 font-semibold">${s.totalValue.toFixed(2)}</td>
+              <td className="p-3 whitespace-nowrap">
+                {s.invoice_id ? (
+                  <div className="flex gap-2">
+                    <a
+                      href={`/api/invoices/donor?sessionId=${s.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs rounded-lg bg-gray-100 px-2 py-1.5 font-medium text-gray-700 hover:bg-gray-200"
+                    >
+                      Donor
+                    </a>
+                    <a
+                      href={`/api/invoices/backend?sessionId=${s.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs rounded-lg bg-gray-100 px-2 py-1.5 font-medium text-gray-700 hover:bg-gray-200"
+                    >
+                      Backend
+                    </a>
+                  </div>
+                ) : (
+                  <span className="text-gray-300 text-xs">—</span>
+                )}
+              </td>
               <td className="p-3">
                 {s.synced_to_salesforce ? (
                   <span className="text-xs px-2 py-1 rounded-full bg-brand-light text-brand-dark font-medium">

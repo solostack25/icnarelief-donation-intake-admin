@@ -3,14 +3,14 @@ import {
   SF_HEADER_FIELD_MAP,
   SF_LINE_ITEM_OBJECT,
   SF_LINE_ITEM_FIELD_MAP,
-  CATEGORY_TO_SALESFORCE_PICKLIST,
+  PROGRAM_TO_SALESFORCE_PICKLIST,
+  CONDITION_TO_SALESFORCE_PICKLIST,
   DONOR_KIND_TO_SALESFORCE_PICKLIST,
 } from "./salesforceMapping";
 
 export type SessionForSync = {
   id: string;
   office: string | null;
-  program: string | null;
   short_description: string | null;
   date_received: string | null;
   donor_kind: string | null;
@@ -25,7 +25,14 @@ export type DonorForSync = {
   tax_receipt_opt_in: boolean | null;
 } | null;
 
-export type DonationLineForSync = { category: string; qty: number };
+export type DonationLineForSync = {
+  item_name: string;
+  condition: "new" | "used" | "na";
+  qty: number;
+  unit_price: number;
+  is_manual_price: boolean;
+  program: string;
+};
 
 export function isSalesforceConfigured() {
   return Boolean(
@@ -61,7 +68,6 @@ export async function pushSessionToSalesforce(
 
   const headerFields: Record<string, unknown> = {
     [SF_HEADER_FIELD_MAP.office]: session.office,
-    [SF_HEADER_FIELD_MAP.program]: session.program,
     [SF_HEADER_FIELD_MAP.shortDescription]: session.short_description,
     [SF_HEADER_FIELD_MAP.dateReceived]: session.date_received,
     [SF_HEADER_FIELD_MAP.donorKind]: session.donor_kind
@@ -94,15 +100,18 @@ export async function pushSessionToSalesforce(
     }
     const headerId: string = headerJson.id;
 
-    // 2. Create one line item per non-zero category
+    // 2. Create one line item per (item, condition) with qty > 0
     const lineRecords = lines
       .filter((l) => l.qty > 0)
       .map((l) => ({
         attributes: { type: SF_LINE_ITEM_OBJECT },
         [SF_LINE_ITEM_FIELD_MAP.parentLookup]: headerId,
-        [SF_LINE_ITEM_FIELD_MAP.category]:
-          CATEGORY_TO_SALESFORCE_PICKLIST[l.category] ?? l.category,
+        [SF_LINE_ITEM_FIELD_MAP.itemName]: l.item_name,
+        [SF_LINE_ITEM_FIELD_MAP.condition]: CONDITION_TO_SALESFORCE_PICKLIST[l.condition] ?? l.condition,
         [SF_LINE_ITEM_FIELD_MAP.quantity]: l.qty,
+        [SF_LINE_ITEM_FIELD_MAP.unitPrice]: l.unit_price,
+        [SF_LINE_ITEM_FIELD_MAP.lineTotal]: l.is_manual_price ? l.unit_price : l.unit_price * l.qty,
+        [SF_LINE_ITEM_FIELD_MAP.program]: PROGRAM_TO_SALESFORCE_PICKLIST[l.program] ?? l.program,
       }));
 
     if (lineRecords.length > 0) {

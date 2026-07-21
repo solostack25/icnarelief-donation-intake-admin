@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import {
   fetchCompletedSessions,
-  sumCategoryTotals,
+  sumProgramTotals,
   type DashboardSession,
 } from "@/lib/fetchSessions";
-import CategoryTotals from "@/components/CategoryTotals";
+import ProgramTotals from "@/components/ProgramTotals";
 import SessionsTable from "@/components/SessionsTable";
 
 export default function MonthlyPage() {
@@ -36,8 +36,9 @@ export default function MonthlyPage() {
     );
   }
 
-  const totals = sumCategoryTotals(sessions);
-  const totalItems = Object.values(totals).reduce((a, b) => a + b, 0);
+  const totals = sumProgramTotals(sessions);
+  const totalItems = sessions.reduce((a, s) => a + s.totalItems, 0);
+  const totalValue = sessions.reduce((a, s) => a + s.totalValue, 0);
 
   const dailyItems: number[] = Array.from({ length: daysInMonth }).map((_, i) => {
     const dayStart = new Date(now.getFullYear(), now.getMonth(), i + 1);
@@ -59,7 +60,7 @@ export default function MonthlyPage() {
           {now.toLocaleDateString(undefined, { month: "long", year: "numeric" })}
         </h1>
         <p className="text-gray-500 text-sm">
-          {sessions.length} donations · {totalItems} items
+          {sessions.length} donations · {totalItems} items · ${totalValue.toFixed(2)}
         </p>
       </div>
 
@@ -80,7 +81,7 @@ export default function MonthlyPage() {
           </div>
           <p className="text-xs text-gray-400 -mt-4 mb-6">Day 1 → {daysInMonth} of the month, by items received</p>
 
-          <CategoryTotals totals={totals} />
+          <ProgramTotals totals={totals} />
           <SessionsTable sessions={sessions} onSynced={markSynced} />
         </>
       )}
