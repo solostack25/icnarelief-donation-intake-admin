@@ -34,6 +34,7 @@ export type InvoiceLine = {
   name: string;
   condition: "new" | "used" | "na";
   qty: number;
+  notes: string | null;
 };
 
 export type PricedInvoiceLine = InvoiceLine & {
@@ -74,7 +75,7 @@ export function buildDonorInvoice(
 ): DonorInvoiceData {
   const lines: InvoiceLine[] = donations
     .filter((d) => d.qty > 0)
-    .map((d) => ({ name: d.item_name, condition: d.condition, qty: d.qty }))
+    .map((d) => ({ name: d.item_name, condition: d.condition, qty: d.qty, notes: d.notes }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return {
@@ -113,6 +114,7 @@ export function buildBackendInvoices(
           name: d.item_name,
           condition: d.condition,
           qty: d.qty,
+          notes: d.notes,
           unitPrice: d.unit_price,
           isManualPrice: d.is_manual_price,
           total: lineTotal(d),

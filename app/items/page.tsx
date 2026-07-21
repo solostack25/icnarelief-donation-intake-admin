@@ -12,6 +12,7 @@ type ItemRow = {
   new_price: number | null;
   used_price: number | null;
   manual_price: boolean;
+  requires_note: boolean;
   active: boolean;
 };
 
@@ -19,12 +20,22 @@ type Draft = {
   name: string;
   program: string;
   manualPrice: boolean;
+  noUsedOption: boolean;
+  requiresNote: boolean;
   newPrice: string;
   usedPrice: string;
 };
 
 function blankDraft(): Draft {
-  return { name: "", program: PROGRAMS[0]?.name ?? "", manualPrice: false, newPrice: "", usedPrice: "" };
+  return {
+    name: "",
+    program: PROGRAMS[0]?.name ?? "",
+    manualPrice: false,
+    noUsedOption: false,
+    requiresNote: false,
+    newPrice: "",
+    usedPrice: "",
+  };
 }
 
 function draftFromItem(item: ItemRow): Draft {
@@ -32,6 +43,8 @@ function draftFromItem(item: ItemRow): Draft {
     name: item.name,
     program: item.program,
     manualPrice: item.manual_price,
+    noUsedOption: !item.manual_price && item.used_price == null,
+    requiresNote: item.requires_note,
     newPrice: item.new_price != null ? String(item.new_price) : "",
     usedPrice: item.used_price != null ? String(item.used_price) : "",
   };
@@ -94,8 +107,9 @@ export default function ItemsPage() {
         program: editDraft.program,
         programCode: program?.code,
         manualPrice: editDraft.manualPrice,
+        requiresNote: editDraft.requiresNote,
         newPrice: editDraft.manualPrice ? null : parseFloat(editDraft.newPrice) || 0,
-        usedPrice: editDraft.manualPrice ? null : parseFloat(editDraft.usedPrice) || 0,
+        usedPrice: editDraft.manualPrice || editDraft.noUsedOption ? null : parseFloat(editDraft.usedPrice) || 0,
       }),
     });
     const data = await res.json();
@@ -139,8 +153,9 @@ export default function ItemsPage() {
         program: addDraft.program,
         programCode: program?.code,
         manualPrice: addDraft.manualPrice,
+        requiresNote: addDraft.requiresNote,
         newPrice: addDraft.manualPrice ? null : parseFloat(addDraft.newPrice) || 0,
-        usedPrice: addDraft.manualPrice ? null : parseFloat(addDraft.usedPrice) || 0,
+        usedPrice: addDraft.manualPrice || addDraft.noUsedOption ? null : parseFloat(addDraft.usedPrice) || 0,
       }),
     });
     const data = await res.json();
@@ -202,9 +217,27 @@ export default function ItemsPage() {
             <input
               type="checkbox"
               checked={addDraft.manualPrice}
-              onChange={(e) => setAddDraft((d) => ({ ...d, manualPrice: e.target.checked }))}
+              onChange={(e) => setAddDraft((d) => ({ ...d, manualPrice: e.target.checked, noUsedOption: false }))}
             />
             Priced at intake (bulk food items — no fixed new/used price)
+          </label>
+          {!addDraft.manualPrice && (
+            <label className="flex items-center gap-2 text-sm text-gray-700">
+              <input
+                type="checkbox"
+                checked={addDraft.noUsedOption}
+                onChange={(e) => setAddDraft((d) => ({ ...d, noUsedOption: e.target.checked }))}
+              />
+              New only — no used option (e.g. diapers)
+            </label>
+          )}
+          <label className="flex items-center gap-2 text-sm text-gray-700">
+            <input
+              type="checkbox"
+              checked={addDraft.requiresNote}
+              onChange={(e) => setAddDraft((d) => ({ ...d, requiresNote: e.target.checked }))}
+            />
+            Prompt for a description at intake (e.g. "Rice", "Pasta" for bulk dry goods)
           </label>
           {!addDraft.manualPrice && (
             <div className="grid grid-cols-2 gap-3">
@@ -218,16 +251,18 @@ export default function ItemsPage() {
                 className="w-full rounded-lg border border-gray-300 p-3"
                 required
               />
-              <input
-                type="number"
-                step="0.01"
-                min="0"
-                placeholder="Used price"
-                value={addDraft.usedPrice}
-                onChange={(e) => setAddDraft((d) => ({ ...d, usedPrice: e.target.value }))}
-                className="w-full rounded-lg border border-gray-300 p-3"
-                required
-              />
+              {!addDraft.noUsedOption && (
+                <input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  placeholder="Used price"
+                  value={addDraft.usedPrice}
+                  onChange={(e) => setAddDraft((d) => ({ ...d, usedPrice: e.target.value }))}
+                  className="w-full rounded-lg border border-gray-300 p-3"
+                  required
+                />
+              )}
             </div>
           )}
           <div className="flex gap-3">
@@ -304,8 +339,16 @@ export default function ItemsPage() {
                       <input
                         value={editDraft.name}
                         onChange={(e) => setEditDraft((d) => ({ ...d, name: e.target.value }))}
-                        className="w-full rounded-lg border border-gray-300 p-2"
+                        className="w-full rounded-lg border border-gray-300 p-2 mb-1"
                       />
+                      <label className="flex items-center gap-1 text-[11px] text-gray-500">
+                        <input
+                          type="checkbox"
+                          checked={editDraft.requiresNote}
+                          onChange={(e) => setEditDraft((d) => ({ ...d, requiresNote: e.target.checked }))}
+                        />
+                        Prompt for description
+                      </label>
                     </td>
                     <td className="p-2">
                       <select
@@ -336,13 +379,25 @@ export default function ItemsPage() {
                           />
                         </td>
                         <td className="p-2">
-                          <input
-                            type="number"
-                            step="0.01"
-                            value={editDraft.usedPrice}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, usedPrice: e.target.value }))}
-                            className="w-20 rounded-lg border border-gray-300 p-2"
-                          />
+                          {editDraft.noUsedOption ? (
+                            <span className="text-xs text-gray-400">New only</span>
+                          ) : (
+                            <input
+                              type="number"
+                              step="0.01"
+                              value={editDraft.usedPrice}
+                              onChange={(e) => setEditDraft((d) => ({ ...d, usedPrice: e.target.value }))}
+                              className="w-20 rounded-lg border border-gray-300 p-2 mb-1"
+                            />
+                          )}
+                          <label className="flex items-center gap-1 text-[11px] text-gray-500">
+                            <input
+                              type="checkbox"
+                              checked={editDraft.noUsedOption}
+                              onChange={(e) => setEditDraft((d) => ({ ...d, noUsedOption: e.target.checked }))}
+                            />
+                            No used
+                          </label>
                         </td>
                       </>
                     )}
@@ -364,10 +419,23 @@ export default function ItemsPage() {
                   </tr>
                 ) : (
                   <tr key={item.id} className={item.active ? "" : "opacity-50"}>
-                    <td className="p-3">{item.name}</td>
+                    <td className="p-3">
+                      {item.name}
+                      {item.requires_note && (
+                        <span className="ml-1.5 text-[10px] rounded-full bg-gray-100 text-gray-500 px-1.5 py-0.5">
+                          prompts for note
+                        </span>
+                      )}
+                    </td>
                     <td className="p-3 text-gray-500">{item.program}</td>
                     <td className="p-3">{item.manual_price ? "—" : `$${item.new_price?.toFixed(2)}`}</td>
-                    <td className="p-3">{item.manual_price ? "—" : `$${item.used_price?.toFixed(2)}`}</td>
+                    <td className="p-3">
+                      {item.manual_price
+                        ? "—"
+                        : item.used_price != null
+                        ? `$${item.used_price.toFixed(2)}`
+                        : "New only"}
+                    </td>
                     <td className="p-3 whitespace-nowrap text-right">
                       <button
                         onClick={() => startEdit(item)}

@@ -19,14 +19,14 @@ export async function POST(req: Request) {
   }
 
   const body = await req.json();
-  const { name, program, programCode, manualPrice, newPrice, usedPrice } = body;
+  const { name, program, programCode, manualPrice, requiresNote, newPrice, usedPrice } = body;
 
   if (!name || !program || !programCode) {
     return NextResponse.json({ error: "Name and program are required" }, { status: 400 });
   }
-  if (!manualPrice && (newPrice == null || usedPrice == null)) {
+  if (!manualPrice && newPrice == null) {
     return NextResponse.json(
-      { error: "New and used prices are required unless this is a manual-price item" },
+      { error: "A new price is required unless this is a manual-price item" },
       { status: 400 }
     );
   }
@@ -55,6 +55,7 @@ export async function POST(req: Request) {
       new_price: manualPrice ? null : newPrice,
       used_price: manualPrice ? null : usedPrice,
       manual_price: !!manualPrice,
+      requires_note: !!requiresNote,
       active: true,
     })
     .select()

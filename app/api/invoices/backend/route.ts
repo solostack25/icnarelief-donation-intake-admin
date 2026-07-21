@@ -24,7 +24,7 @@ export async function GET(req: Request) {
       supabase.from("donors").select("*").eq("session_id", sessionId).maybeSingle(),
       supabase
         .from("donations")
-        .select("item_code, item_name, condition, program, program_code, unit_price, is_manual_price, qty")
+        .select("item_code, item_name, condition, program, program_code, unit_price, is_manual_price, qty, notes")
         .eq("session_id", sessionId),
     ]);
 

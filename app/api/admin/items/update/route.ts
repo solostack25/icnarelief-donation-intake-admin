@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   }
 
   const body = await req.json();
-  const { id, name, program, programCode, manualPrice, newPrice, usedPrice, active } = body;
+  const { id, name, program, programCode, manualPrice, requiresNote, newPrice, usedPrice, active } = body;
 
   if (!id) {
     return NextResponse.json({ error: "id is required" }, { status: 400 });
@@ -21,6 +21,7 @@ export async function POST(req: Request) {
   if (program !== undefined) updates.program = program;
   if (programCode !== undefined) updates.program_code = programCode;
   if (manualPrice !== undefined) updates.manual_price = !!manualPrice;
+  if (requiresNote !== undefined) updates.requires_note = !!requiresNote;
   if (newPrice !== undefined) updates.new_price = manualPrice ? null : newPrice;
   if (usedPrice !== undefined) updates.used_price = manualPrice ? null : usedPrice;
   if (active !== undefined) updates.active = !!active;

@@ -111,11 +111,17 @@ export async function renderDonorInvoicePdf(data: DonorInvoiceData): Promise<Uin
   drawTableHeader(ctx, cols);
 
   data.lines.forEach((line) => {
-    ensureSpace(ctx, 18);
+    ensureSpace(ctx, line.notes ? 30 : 18);
     text(ctx, line.name, MARGIN, 10, ctx.font);
     text(ctx, CONDITION_LABEL[line.condition] ?? line.condition, 380, 10, ctx.font, GRAY);
     text(ctx, String(line.qty), 480, 10, ctx.font);
-    ctx.y -= 18;
+    ctx.y -= 14;
+    if (line.notes) {
+      text(ctx, line.notes, MARGIN, 8, ctx.font, GRAY);
+      ctx.y -= 12;
+    } else {
+      ctx.y -= 4;
+    }
   });
 
   ctx.y -= 10;
@@ -169,13 +175,19 @@ export async function renderBackendInvoicesPdf(invoices: BackendInvoiceData[]): 
     drawTableHeader(ctx, cols);
 
     inv.lines.forEach((line) => {
-      ensureSpace(ctx, 18);
+      ensureSpace(ctx, line.notes ? 30 : 18);
       text(ctx, line.name, MARGIN, 10, ctx.font);
       text(ctx, CONDITION_LABEL[line.condition] ?? line.condition, 280, 10, ctx.font, GRAY);
       text(ctx, String(line.qty), 360, 10, ctx.font);
       text(ctx, line.isManualPrice ? "—" : `$${line.unitPrice.toFixed(2)}`, 410, 10, ctx.font, GRAY);
       text(ctx, `$${line.total.toFixed(2)}`, 480, 10, ctx.font);
-      ctx.y -= 18;
+      ctx.y -= 14;
+      if (line.notes) {
+        text(ctx, line.notes, MARGIN, 8, ctx.font, GRAY);
+        ctx.y -= 12;
+      } else {
+        ctx.y -= 4;
+      }
     });
 
     ctx.y -= 10;

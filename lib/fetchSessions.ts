@@ -11,6 +11,7 @@ export type DonationRow = {
   unit_price: number;
   is_manual_price: boolean;
   qty: number;
+  notes: string | null;
 };
 
 export type DashboardSession = {
@@ -63,7 +64,7 @@ export async function fetchCompletedSessions(
   const [{ data: donations }, { data: donors }] = await Promise.all([
     supabase
       .from("donations")
-      .select("session_id, item_code, item_name, condition, program, program_code, unit_price, is_manual_price, qty")
+      .select("session_id, item_code, item_name, condition, program, program_code, unit_price, is_manual_price, qty, notes")
       .in("session_id", ids),
     supabase.from("donors").select("session_id, name, email, phone").in("session_id", ids),
   ]);
