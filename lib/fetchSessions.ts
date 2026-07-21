@@ -81,6 +81,33 @@ export async function fetchCompletedSessions(
   });
 }
 
+export type ProgramBreakdownRow = {
+  program: string;
+  programCode: string;
+  items: number;
+  value: number;
+};
+
+export function programBreakdownForSession(session: DashboardSession): ProgramBreakdownRow[] {
+  const byProgram = new Map<string, ProgramBreakdownRow>();
+  session.donations.forEach((d) => {
+    if (d.qty <= 0) return;
+    const existing = byProgram.get(d.program);
+    if (existing) {
+      existing.items += d.qty;
+      existing.value += lineTotal(d);
+    } else {
+      byProgram.set(d.program, {
+        program: d.program,
+        programCode: d.program_code,
+        items: d.qty,
+        value: lineTotal(d),
+      });
+    }
+  });
+  return Array.from(byProgram.values()).sort((a, b) => a.program.localeCompare(b.program));
+}
+
 export type ProgramTotal = { items: number; value: number };
 
 const ALL_PROGRAMS = programsInUse(ITEMS.map((i) => i.program));

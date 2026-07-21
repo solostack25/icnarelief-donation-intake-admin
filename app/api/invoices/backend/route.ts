@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const sessionId = searchParams.get("sessionId");
+  const programFilter = searchParams.get("program"); // optional — download just this one program's invoice
   if (!sessionId) {
     return NextResponse.json({ error: "sessionId is required" }, { status: 400 });
   }
@@ -31,18 +32,21 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: sessionError?.message ?? "Session not found" }, { status: 404 });
   }
 
-  const invoices = buildBackendInvoices(session, donor ?? null, (donations ?? []) as DonationRow[]);
+  let invoices = buildBackendInvoices(session, donor ?? null, (donations ?? []) as DonationRow[]);
+  if (programFilter) {
+    invoices = invoices.filter((inv) => inv.program === programFilter);
+  }
   if (invoices.length === 0) {
-    return NextResponse.json({ error: "No donation lines on this session" }, { status: 404 });
+    return NextResponse.json({ error: "No donation lines for this session/program" }, { status: 404 });
   }
 
   const pdfBytes = await renderBackendInvoicesPdf(invoices);
-  const baseInvoiceNumber = session.invoice_id ?? session.id.slice(0, 8);
+  const filenameBase = programFilter ? invoices[0].invoiceNumber : session.invoice_id ?? session.id.slice(0, 8);
 
   return new NextResponse(Buffer.from(pdfBytes), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `inline; filename="${baseInvoiceNumber}-backend.pdf"`,
+      "Content-Disposition": `inline; filename="${filenameBase}-backend.pdf"`,
       "Cache-Control": "no-store, must-revalidate",
     },
   });
