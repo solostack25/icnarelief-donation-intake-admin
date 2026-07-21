@@ -55,13 +55,16 @@ export default function SessionsTable({
             <th className="p-3"></th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100">
-          {sessions.map((s) => {
+        <tbody className="divide-y divide-gray-300">
+          {sessions.map((s, sIndex) => {
             const breakdown = programBreakdownForSession(s);
             const rowCount = Math.max(breakdown.length, 1);
             return breakdown.length > 0 ? (
               breakdown.map((pb, i) => (
-                <tr key={`${s.id}-${pb.programCode}`} className={i > 0 ? "border-t-0" : ""}>
+                <tr
+                  key={`${s.id}-${pb.programCode}`}
+                  className={i === 0 && sIndex > 0 ? "border-t-4 border-t-gray-400" : ""}
+                >
                   {i === 0 && (
                     <td className="p-3 align-top" rowSpan={rowCount}>
                       <p className="whitespace-nowrap">
@@ -133,7 +136,7 @@ export default function SessionsTable({
                 </tr>
               ))
             ) : (
-              <tr key={s.id}>
+              <tr key={s.id} className={sIndex > 0 ? "border-t-4 border-t-gray-400" : ""}>
                 <td className="p-3 align-top">
                   <p className="whitespace-nowrap">
                     {s.completed_at ? new Date(s.completed_at).toLocaleString() : "—"}
