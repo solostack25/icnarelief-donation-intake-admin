@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "Today" },
   { href: "/weekly", label: "Weekly" },
   { href: "/monthly", label: "Monthly" },
+  { href: "/items", label: "Items" },
   { href: "/users", label: "Users" },
 ];
 
