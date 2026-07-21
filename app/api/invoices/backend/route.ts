@@ -4,6 +4,10 @@ import { buildBackendInvoices } from "@/lib/invoices";
 import { renderBackendInvoicesPdf } from "@/lib/renderInvoicePdf";
 import type { DonationRow } from "@/lib/fetchSessions";
 
+// Same as the donor route — must never be cached, always reflect the
+// current donations for this session.
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const sessionId = searchParams.get("sessionId");
@@ -39,6 +43,7 @@ export async function GET(req: Request) {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `inline; filename="${baseInvoiceNumber}-backend.pdf"`,
+      "Cache-Control": "no-store, must-revalidate",
     },
   });
 }

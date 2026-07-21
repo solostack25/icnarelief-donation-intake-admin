@@ -4,6 +4,11 @@ import { buildDonorInvoice } from "@/lib/invoices";
 import { renderDonorInvoicePdf } from "@/lib/renderInvoicePdf";
 import type { DonationRow } from "@/lib/fetchSessions";
 
+// This must never be cached/statically rendered — it has to reflect
+// whatever's in the donations table at the moment it's requested, not
+// whatever was there the first time this URL was hit.
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const sessionId = searchParams.get("sessionId");
@@ -34,6 +39,7 @@ export async function GET(req: Request) {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `inline; filename="${data.invoiceNumber}-donor.pdf"`,
+      "Cache-Control": "no-store, must-revalidate",
     },
   });
 }
