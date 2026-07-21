@@ -159,7 +159,7 @@ export async function generateBarcodeSheetPdf(items: BarcodeSheetItem[]): Promis
         newPage(currentProgram ?? undefined);
       } else {
         page.drawText(currentProgram ?? "", { x: MARGIN, y: sectionY - SECTION_H + 8, size: 11, font: bold, color: BRAND });
-        y -= SECTION_H;
+        y = sectionY - SECTION_H;
         row = 0;
       }
     }
@@ -174,7 +174,7 @@ export async function generateBarcodeSheetPdf(items: BarcodeSheetItem[]): Promis
         newPage("Controls");
       } else {
         page.drawText("Controls", { x: MARGIN, y: sectionY - SECTION_H + 8, size: 11, font: bold, color: RED });
-        y -= SECTION_H;
+        y = sectionY - SECTION_H;
         row = 0;
       }
       currentProgram = null; // only draw the Controls header once
