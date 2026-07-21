@@ -176,16 +176,19 @@ export default function ItemsPage() {
       <div className="flex items-center justify-between mb-1">
         <h1 className="text-2xl font-bold text-brand-dark">Item Price List</h1>
         <a
-          href="/api/admin/items/export"
-          className="text-xs rounded-lg bg-gray-100 px-3 py-2 font-medium text-gray-700 hover:bg-gray-200"
+          href="/api/admin/items/barcode-sheet"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs rounded-lg bg-brand px-3 py-2 font-semibold text-white hover:opacity-90"
         >
-          Download items.json (for barcode sheet)
+          Generate Barcode Sheet
         </a>
       </div>
       <p className="text-gray-500 text-sm mb-6">
         This is the live price list — changes here show up on the scanning screen immediately, no
         redeploy needed. "Remove" hides an item from scanning but keeps it in history; it can be
-        restored anytime.
+        restored anytime. "Generate Barcode Sheet" builds a fresh, printable PDF from whatever's
+        active right now — it can take a few seconds for the full catalog.
       </p>
 
       {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
