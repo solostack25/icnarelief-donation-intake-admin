@@ -40,6 +40,23 @@ function fmtDate(d: string | null): string {
   return dt.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 }
 
+function wrapText(font: PDFFont, str: string, maxWidth: number, size: number): string[] {
+  const words = str.split(/\s+/).filter(Boolean);
+  const lines: string[] = [];
+  let current = "";
+  for (const w of words) {
+    const test = current ? `${current} ${w}` : w;
+    if (font.widthOfTextAtSize(test, size) > maxWidth && current) {
+      lines.push(current);
+      current = w;
+    } else {
+      current = test;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
+
 async function makeCtx(): Promise<Ctx> {
   const doc = await PDFDocument.create();
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -134,14 +151,39 @@ export async function renderDonorInvoicePdf(data: DonorInvoiceData): Promise<Uin
   ctx.y -= 20;
   text(ctx, `Total items: ${data.totalItems}`, MARGIN, 11, ctx.bold);
   ctx.y -= 30;
-  text(
-    ctx,
-    "No monetary value is stated on this receipt. See your records for the fair market value of donated items.",
-    MARGIN,
-    8,
-    ctx.font,
-    GRAY
-  );
+
+  if (data.signatureDataUrl) {
+    try {
+      const base64 = data.signatureDataUrl.split(",")[1] ?? data.signatureDataUrl;
+      const sigImg = await ctx.doc.embedPng(Buffer.from(base64, "base64"));
+      const sigW = 180;
+      const sigH = (sigImg.height / sigImg.width) * sigW;
+      ensureSpace(ctx, sigH + 30);
+      ctx.page.drawImage(sigImg, { x: MARGIN, y: ctx.y - sigH, width: sigW, height: sigH });
+      ctx.y -= sigH + 4;
+      ctx.page.drawLine({
+        start: { x: MARGIN, y: ctx.y },
+        end: { x: MARGIN + sigW, y: ctx.y },
+        thickness: 0.75,
+        color: LIGHT,
+      });
+      ctx.y -= 12;
+      text(ctx, "Donor Signature", MARGIN, 8, ctx.font, GRAY);
+      ctx.y -= 24;
+    } catch {
+      // Corrupt/missing signature data — skip it rather than fail the whole PDF.
+    }
+  }
+
+  const disclaimer =
+    data.disclaimer ??
+    "No monetary value is stated on this receipt. See your records for the fair market value of donated items.";
+  const wrapWidth = PAGE_W - 2 * MARGIN;
+  wrapText(ctx.font, disclaimer, wrapWidth, 8).forEach((line) => {
+    ensureSpace(ctx, 12);
+    text(ctx, line, MARGIN, 8, ctx.font, GRAY);
+    ctx.y -= 11;
+  });
 
   return ctx.doc.save();
 }

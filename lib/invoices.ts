@@ -28,6 +28,7 @@ export type DonorForInvoice = {
   name: string | null;
   email: string | null;
   address: string | null;
+  signature_data: string | null;
 } | null;
 
 export type InvoiceLine = {
@@ -50,6 +51,8 @@ export type DonorInvoiceData = {
   donorLabel: string;
   lines: InvoiceLine[];
   totalItems: number;
+  signatureDataUrl: string | null;
+  disclaimer: string | null;
 };
 
 export type BackendInvoiceData = {
@@ -71,7 +74,8 @@ function donorLabelFor(session: SessionForInvoice, donor: DonorForInvoice): stri
 export function buildDonorInvoice(
   session: SessionForInvoice,
   donor: DonorForInvoice,
-  donations: DonationRow[]
+  donations: DonationRow[],
+  disclaimer: string | null = null
 ): DonorInvoiceData {
   const lines: InvoiceLine[] = donations
     .filter((d) => d.qty > 0)
@@ -85,6 +89,8 @@ export function buildDonorInvoice(
     donorLabel: donorLabelFor(session, donor),
     lines,
     totalItems: lines.reduce((a, l) => a + l.qty, 0),
+    signatureDataUrl: donor?.signature_data ?? null,
+    disclaimer,
   };
 }
 

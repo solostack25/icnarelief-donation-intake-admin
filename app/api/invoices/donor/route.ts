@@ -18,7 +18,7 @@ export async function GET(req: Request) {
 
   const supabase = createServerSupabase();
 
-  const [{ data: session, error: sessionError }, { data: donor }, { data: donations }] =
+  const [{ data: session, error: sessionError }, { data: donor }, { data: donations }, { data: settings }] =
     await Promise.all([
       supabase.from("sessions").select("*").eq("id", sessionId).single(),
       supabase.from("donors").select("*").eq("session_id", sessionId).maybeSingle(),
@@ -26,13 +26,19 @@ export async function GET(req: Request) {
         .from("donations")
         .select("item_code, item_name, condition, program, program_code, unit_price, is_manual_price, qty, notes")
         .eq("session_id", sessionId),
+      supabase.from("settings").select("invoice_disclaimer").eq("id", "global").maybeSingle(),
     ]);
 
   if (sessionError || !session) {
     return NextResponse.json({ error: sessionError?.message ?? "Session not found" }, { status: 404 });
   }
 
-  const data = buildDonorInvoice(session, donor ?? null, (donations ?? []) as DonationRow[]);
+  const data = buildDonorInvoice(
+    session,
+    donor ?? null,
+    (donations ?? []) as DonationRow[],
+    settings?.invoice_disclaimer ?? null
+  );
   const pdfBytes = await renderDonorInvoicePdf(data);
 
   return new NextResponse(Buffer.from(pdfBytes), {

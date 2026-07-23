@@ -9,6 +9,7 @@ const links = [
   { href: "/weekly", label: "Weekly" },
   { href: "/monthly", label: "Monthly" },
   { href: "/items", label: "Items" },
+  { href: "/settings", label: "Settings" },
   { href: "/users", label: "Users" },
 ];
 
