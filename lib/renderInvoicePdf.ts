@@ -2,8 +2,9 @@
 // actual PDF bytes using pdf-lib (pure JS, no native deps — safe on
 // Vercel's serverless functions).
 
-import { PDFDocument, StandardFonts, rgb, PDFFont, PDFPage } from "pdf-lib";
+import { PDFDocument, StandardFonts, rgb, PDFFont, PDFPage, PDFImage } from "pdf-lib";
 import type { DonorInvoiceData, BackendInvoiceData } from "./invoices";
+import { LOGO_PNG_BASE64 } from "./logo";
 
 const PAGE_W = 612; // US Letter
 const PAGE_H = 792;
@@ -11,12 +12,14 @@ const MARGIN = 50;
 const BRAND = rgb(0.02, 0.35, 0.3);
 const GRAY = rgb(0.45, 0.45, 0.45);
 const LIGHT = rgb(0.85, 0.85, 0.85);
+const LOGO_ASPECT = 125 / 600; // source logo is 600x125
 
 type Ctx = {
   doc: PDFDocument;
   page: PDFPage;
   font: PDFFont;
   bold: PDFFont;
+  logo: PDFImage;
   y: number;
 };
 
@@ -57,20 +60,40 @@ function wrapText(font: PDFFont, str: string, maxWidth: number, size: number): s
   return lines;
 }
 
+// Same as wrapText, but respects the original line breaks in the input
+// (e.g. a disclaimer typed as separate lines/paragraphs in the admin
+// settings textarea) instead of collapsing everything into one wrapped
+// blob. Blank lines become paragraph gaps.
+function wrapParagraphs(font: PDFFont, str: string, maxWidth: number, size: number): string[] {
+  const rawLines = str.split(/\r?\n/);
+  const out: string[] = [];
+  rawLines.forEach((raw) => {
+    if (raw.trim() === "") {
+      out.push("");
+    } else {
+      out.push(...wrapText(font, raw, maxWidth, size));
+    }
+  });
+  return out;
+}
+
 async function makeCtx(): Promise<Ctx> {
   const doc = await PDFDocument.create();
   const font = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const logo = await doc.embedPng(Buffer.from(LOGO_PNG_BASE64, "base64"));
   const page = doc.addPage([PAGE_W, PAGE_H]);
-  return { doc, page, font, bold, y: PAGE_H - MARGIN };
+  return { doc, page, font, bold, logo, y: PAGE_H - MARGIN };
 }
 
 function drawInvoiceHeader(
   ctx: Ctx,
   opts: { title: string; invoiceNumber: string; office: string | null; dateReceived: string | null; donorLabel: string }
 ) {
-  text(ctx, "ICNA Relief", MARGIN, 20, ctx.bold, BRAND);
-  ctx.y -= 24;
+  const logoW = 130;
+  const logoH = logoW * LOGO_ASPECT;
+  ctx.page.drawImage(ctx.logo, { x: MARGIN, y: ctx.y - logoH + 8, width: logoW, height: logoH });
+  ctx.y -= logoH + 4;
   text(ctx, opts.title, MARGIN, 14, ctx.bold);
   ctx.y -= 22;
 
@@ -179,10 +202,14 @@ export async function renderDonorInvoicePdf(data: DonorInvoiceData): Promise<Uin
     data.disclaimer ??
     "No monetary value is stated on this receipt. See your records for the fair market value of donated items.";
   const wrapWidth = PAGE_W - 2 * MARGIN;
-  wrapText(ctx.font, disclaimer, wrapWidth, 8).forEach((line) => {
+  wrapParagraphs(ctx.font, disclaimer, wrapWidth, 8).forEach((line) => {
     ensureSpace(ctx, 12);
-    text(ctx, line, MARGIN, 8, ctx.font, GRAY);
-    ctx.y -= 11;
+    if (line === "") {
+      ctx.y -= 6; // paragraph gap
+    } else {
+      text(ctx, line, MARGIN, 8, ctx.font, GRAY);
+      ctx.y -= 11;
+    }
   });
 
   return ctx.doc.save();

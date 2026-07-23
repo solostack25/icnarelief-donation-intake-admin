@@ -13,6 +13,29 @@ export default function SessionsTable({
 }) {
   const [pushingId, setPushingId] = useState<string | null>(null);
   const [errorForId, setErrorForId] = useState<Record<string, string>>({});
+  const [resendingId, setResendingId] = useState<string | null>(null);
+  const [resendStatusForId, setResendStatusForId] = useState<Record<string, string>>({});
+
+  async function resendEmail(sessionId: string) {
+    setResendingId(sessionId);
+    setResendStatusForId((prev) => ({ ...prev, [sessionId]: "" }));
+    try {
+      const res = await fetch("/api/invoices/resend-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId }),
+      });
+      const result = await res.json();
+      setResendStatusForId((prev) => ({
+        ...prev,
+        [sessionId]: result.success ? "Sent ✓" : result.error ?? "Failed",
+      }));
+    } catch (err: any) {
+      setResendStatusForId((prev) => ({ ...prev, [sessionId]: err.message ?? "Failed" }));
+    } finally {
+      setResendingId(null);
+    }
+  }
 
   async function pushToSalesforce(sessionId: string) {
     setPushingId(sessionId);
@@ -74,14 +97,29 @@ export default function SessionsTable({
                         {s.donor?.name || s.donor_org_name || <span className="text-gray-400">Anonymous</span>}
                       </p>
                       <p className="text-xs text-gray-400">{s.office ?? "—"}</p>
-                      <a
-                        href={`/api/invoices/donor?sessionId=${s.id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 inline-block text-xs rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-700 hover:bg-gray-200"
-                      >
-                        Donor Receipt
-                      </a>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        <a
+                          href={`/api/invoices/donor?sessionId=${s.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-xs rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-700 hover:bg-gray-200"
+                        >
+                          Donor Receipt
+                        </a>
+                        {s.donor?.email && (
+                          <button
+                            onClick={() => resendEmail(s.id)}
+                            disabled={resendingId === s.id}
+                            className="text-xs rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-700 hover:bg-gray-200 disabled:opacity-50"
+                            title={`Resend to ${s.donor.email}`}
+                          >
+                            {resendingId === s.id ? "Sending..." : "Resend Email"}
+                          </button>
+                        )}
+                      </div>
+                      {resendStatusForId[s.id] && (
+                        <p className="text-xs text-gray-500 mt-1 max-w-[160px]">{resendStatusForId[s.id]}</p>
+                      )}
                     </td>
                   )}
                   <td className="p-3 whitespace-nowrap font-mono text-xs text-brand-dark font-semibold">

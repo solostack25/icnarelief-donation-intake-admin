@@ -46,8 +46,26 @@ click **Donor** / **Backend** on any row in the sessions table:
 The data-building logic lives in `lib/invoices.ts` (plain functions, easy
 to unit test) and the actual PDF layout in `lib/renderInvoicePdf.ts`
 (using `pdf-lib` — pure JS, no native deps, safe on Vercel serverless).
-Want a "print all today's invoices at once" button, or emailed receipts
-instead of/alongside the download links? Say the word.
+Both PDFs are branded with the ICNA Relief logo (`lib/logo.ts`, embedded
+as base64 — no file-tracing concerns on serverless) and end with the
+disclaimer text from the Settings page, which preserves line/paragraph
+breaks as typed rather than collapsing everything into one run-on blob.
+
+### Resending a donor's receipt email
+
+Click **Resend Email** next to any session with a donor email on file.
+This doesn't duplicate the email-sending logic here — it calls the intake
+app's own `/api/send-donor-email` endpoint (same PDF, same
+settings-driven subject/body template) via a server-to-server request, so
+there's exactly one place that logic lives. Requires one more env var:
+
+```
+INTAKE_APP_URL=https://your-intake-app-domain.org
+```
+
+(the intake app's production URL — no trailing slash). Without this set,
+the button will show an error explaining it's not configured, rather than
+failing silently.
 
 ## Auth
 

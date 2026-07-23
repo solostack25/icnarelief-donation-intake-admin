@@ -27,7 +27,7 @@ export default function Nav() {
     <nav className="border-b border-gray-200 bg-white">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-6">
-          <span className="font-bold text-brand-dark">Donation Admin</span>
+          <img src="/logo.png" alt="ICNA Relief" className="h-7 w-auto" />
           {links.map((l) => (
             <Link
               key={l.href}
