@@ -25,7 +25,13 @@ export default function SessionsTable({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId }),
       });
-      const result = await res.json();
+      const rawBody = await res.text();
+      let result: any;
+      try {
+        result = JSON.parse(rawBody);
+      } catch {
+        result = { error: `Server returned HTTP ${res.status} with a non-JSON response: ${rawBody.slice(0, 150) || "(empty)"}` };
+      }
       setResendStatusForId((prev) => ({
         ...prev,
         [sessionId]: result.success ? "Sent ✓" : result.error ?? "Failed",
